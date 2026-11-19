@@ -28,51 +28,67 @@ records.
 - Language: Python 3
 - Storage: JSON
 - Libraries: json, os (Python standard library)
-🏗️ System Architecture
-                 ┌──────────────────────┐
-                 │        User         │
-                 └──────────┬──────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │     Main Menu        │
-                 └──────────┬──────────┘
-                            │
-        ┌───────────┬───────┼────────┬───────────┐
-        ▼           ▼       ▼        ▼           ▼
-   Add Student  View All  Search  Update      Delete
-        │           │       │        │           │
-        └───────────┴───────┴────────┴───────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │  Student Records    │
-                 │  (Python Dictionary) │
-                 └──────────┬──────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │ Grade Calculation    │
-                 │ Total / Percentage  │
-                 │ / Grade             │
-                 └──────────┬──────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │  JSON File Storage   │
-                 │    students.json    │
-                 └──────────────────────┘
-📂 Project Structure
+## 🏗️ System Architecture
+
+```text
+                 +------------------+
+                 |      User        |
+                 +--------+---------+
+                          |
+                          v
+                 +------------------+
+                 |    Main Menu     |
+                 +--------+---------+
+                          |
+       +------------------+------------------+
+       |         |         |        |        |
+       v         v         v        v        v
+   Add Student  View    Search   Update   Delete
+       |         |         |        |        |
+       +---------+---------+--------+--------+
+                          |
+                          v
+                 +------------------+
+                 | Student Records  |
+                 |   Dictionary      |
+                 +--------+---------+
+                          |
+                          v
+                 +------------------+
+                 | Grade Calculation|
+                 | Total & Average  |
+                 +--------+---------+
+                          |
+                          v
+                 +------------------+
+                 | Grade Assignment|
+                 +--------+---------+
+                          |
+                          v
+                 +------------------+
+                 | JSON File Storage|
+                 |  students.json  |
+                 +------------------+
+```
+## 📂 Project Structure
+
+```text
 Student-Grade-Management-System/
 │
-├── student_grade_management.py   # Main Python application
-├── students.json                # Student data (created when records are saved)
-└── README.md                     # Project documentation
-⚙️ Requirements
-- Python 3.x
-- Any code editor (VS Code recommended)
-No external packages are required. The project uses Python's built-in
-libraries.
+├── student_grade_management.py
+├── students.json
+└── README.md
+```                    # Project documentation
+## 🛠️ Technologies Used
+
+- Python 3
+- JSON
+- Functions
+- Dictionaries
+- File Handling
+- Conditional Statements
+- Loops
+- `json` and `os` libraries
 🚀 Installation and Execution
 1. Clone the repository
 git clone https://github.com/gosettisowmya/Student-Grade-Management-System.git
