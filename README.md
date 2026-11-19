@@ -1,4 +1,4 @@
-🎓 Student Grade Management System
+                                                   🎓 Student Grade Management System
 A simple Student Grade Management System built using Python to
 manage student records, subject marks, and academic performance. The
 application supports adding, viewing, searching, updating, and deleting
