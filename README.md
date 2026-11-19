@@ -1,76 +1,59 @@
-                                🎓 Student Grade Management System
-A simple Student Grade Management System built using Python to
-manage student records, subject marks, and academic performance. The
-application supports adding, viewing, searching, updating, and deleting
-student records, while automatically calculating totals, percentages,
-and grades. Student information is stored locally using JSON file
-storage.
-📌 Project Overview
-Managing student marks manually can be time-consuming and error-prone.
-This project provides a menu-driven Python application that helps
-organize student information and automate basic grade calculations.
+# Student Grade Management System
 
-Users can enter student details and marks for multiple subjects, view
-academic results, search student records, update marks, and delete
-records.
-✨ Features
-- Add student records
-- View all student records
-- Search students using Student ID
-- Update subject marks
-- Delete student records
-- Calculate total marks
-- Calculate percentage
-- Assign grades automatically
-- Validate marks between 0 and 100
-- Store records persistently in a JSON file
-🛠️ Technologies Used
-- Language: Python 3
-- Storage: JSON
-- Libraries: json, os (Python standard library)
-## 🏗️ System Architecture
+A menu-driven application developed using Python to manage student records, subject marks, and academic performance. The system provides essential student record management operations and automatically calculates total marks, percentages, and grades. Student data is stored locally using JSON file handling.
 
-```text
-                 +------------------+
-                 |      User        |
-                 +--------+---------+
-                          |
-                          v
-                 +------------------+
-                 |    Main Menu     |
-                 +--------+---------+
-                          |
-       +------------------+------------------+
-       |         |         |        |        |
-       v         v         v        v        v
-   Add Student  View    Search   Update   Delete
-       |         |         |        |        |
-       +---------+---------+--------+--------+
-                          |
-                          v
-                 +------------------+
-                 | Student Records  |
-                 |   Dictionary      |
-                 +--------+---------+
-                          |
-                          v
-                 +------------------+
-                 | Grade Calculation|
-                 | Total & Average  |
-                 +--------+---------+
-                          |
-                          v
-                 +------------------+
-                 | Grade Assignment|
-                 +--------+---------+
-                          |
-                          v
-                 +------------------+
-                 | JSON File Storage|
-                 |  students.json  |
-                 +------------------+
+## Overview
+
+The Student Grade Management System simplifies the process of maintaining student academic records. It allows users to add, view, search, update, and delete student information through an interactive command-line interface.
+
+The application automates grade calculation based on student marks and provides persistent storage so records can be accessed across program executions.
+
+## Features
+
+- **Add Student:** Register student details, subjects, and marks.
+- **View Students:** Display all registered student records.
+- **Search Student:** Retrieve student information using Student ID.
+- **Update Marks:** Modify marks for a particular subject.
+- **Delete Student:** Remove student records from the system.
+- **Total Calculation:** Calculate the total marks obtained.
+- **Percentage Calculation:** Calculate the average percentage across subjects.
+- **Grade Assignment:** Automatically assign grades based on percentage.
+- **Input Validation:** Validate marks within the allowed range.
+- **Persistent Storage:** Save and retrieve student records using JSON.
+
+## Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python 3 | Core programming language |
+| JSON | Student data storage |
+| `json` module | Reading and writing student records |
+| `os` module | File existence checking |
+| VS Code | Development environment |
+| Git & GitHub | Version control and project hosting |
+
+## System Architecture
+
+```mermaid
+flowchart TD
+    A[User] --> B[Main Menu]
+    B --> C[Add Student]
+    B --> D[View Students]
+    B --> E[Search Student]
+    B --> F[Update Marks]
+    B --> G[Delete Student]
+    C --> H[Student Records]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+    H --> I[Total and Percentage Calculation]
+    I --> J[Grade Assignment]
+    H --> K[JSON File Storage]
+    K --> L[students.json]
 ```
-## 📂 Project Structure
+
+## Project Structure
 
 ```text
 Student-Grade-Management-System/
@@ -78,26 +61,58 @@ Student-Grade-Management-System/
 ├── student_grade_management.py
 ├── students.json
 └── README.md
-```                    # Project documentation
-## 🛠️ Technologies Used
+```
 
-- Python 3
-- JSON
-- Functions
-- Dictionaries
-- File Handling
-- Conditional Statements
-- Loops
-- `json` and `os` libraries
-🚀 Installation and Execution
-1. Clone the repository
+| File | Description |
+|---|---|
+| `student_grade_management.py` | Contains the main program, menu, student operations, and grade calculation logic. |
+| `students.json` | Stores student information and marks persistently. Created when student records are saved. |
+| `README.md` | Project documentation. |
+
+## Grade Calculation
+
+The system calculates the total marks and average percentage from the subjects entered by the user.
+
+| Percentage | Grade |
+|---|---|
+| 90–100% | A+ |
+| 80–89.99% | A |
+| 70–79.99% | B |
+| 60–69.99% | C |
+| 50–59.99% | D |
+| Below 50% | F |
+
+## Installation and Setup
+
+### Prerequisites
+
+- Python 3.x
+- Git
+- Visual Studio Code (recommended)
+
+No third-party Python packages are required.
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/gosettisowmya/Student-Grade-Management-System.git
-2. Navigate into the project folder
+```
+
+### 2. Navigate to the project directory
+
+```bash
 cd Student-Grade-Management-System
-3. Run the program
+```
+
+### 3. Run the application
+
+```bash
 python student_grade_management.py
-🖥️ Menu Options
-When you run the program, the following menu is displayed:
+```
+
+## Application Menu
+
+```text
 ===== Student Grade Management System =====
 
 1. Add Student
@@ -106,29 +121,19 @@ When you run the program, the following menu is displayed:
 4. Update Student Marks
 5. Delete Student
 6. Exit
-  Option                 Description
-  Add Student            Enter a student ID, name, subjects, and marks
-View All Students      Display all stored student records
-Search Student         Find a student using their ID
-Update Student Marks   Modify marks for an existing subject
-Delete Student         Remove a student record
-Exit                   Close the application
-📊 Grade Calculation
-The system calculates total marks and average percentage across the
-entered subjects.
+```
 
-  Percentage   Grade
-  90--100      A+
-80--89.99    A
-70--79.99    B
-60--69.99    C
-50--59.99    D
-Below 50     F
-💾 Data Storage
-Student records are saved in a local JSON file named students.json.
-The file is automatically created when student data is saved, and
-records can be loaded again when the program is restarted.
-📚 Python Concepts Demonstrated
+## How It Works
+
+1. The application loads existing student records from the JSON file.
+2. The user selects an operation from the main menu.
+3. Student information and subject marks are entered or modified.
+4. The application calculates total marks, percentage, and grade when displaying student results.
+5. Updated student information is saved to the JSON file.
+6. Stored records are available the next time the application is executed.
+
+## Python Concepts Demonstrated
+
 - Functions and modular programming
 - Dictionaries and data structures
 - Loops and conditional statements
@@ -136,14 +141,23 @@ records can be loaded again when the program is restarted.
 - File handling
 - JSON serialization and deserialization
 - CRUD operations (Create, Read, Update, Delete)
-- Basic validation and exception handling
-🔮 Future Enhancements
-- Graphical user interface (GUI)
-- Student ranking and class toppers
-- Export student reports to CSV or Excel
-- Subject-wise performance analysis
-- Database integration using MySQL or SQLite
-👩‍💻 Author
-Gosetti Sowmya
+- Exception handling and input validation
 
-GitHub: @gosettisowmya
+## Future Enhancements
+
+- Graphical user interface using Tkinter
+- Database integration using SQLite or MySQL
+- Student ranking and class topper functionality
+- Export reports to Excel or CSV
+- Subject-wise performance analysis
+- Improved input validation and reporting
+
+## Author
+
+**Gosetti Sowmya**
+
+GitHub: [gosettisowmya](https://github.com/gosettisowmya)
+
+---
+
+If you find this project useful, feel free to explore the repository and contribute improvements.
